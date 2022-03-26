@@ -1,0 +1,13 @@
+* {
+    border: 1px solid pink;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    aspect-ratio: 1;
+}
+
+.pixel {
+    background-color: black;
+}
