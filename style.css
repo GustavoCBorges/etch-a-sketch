@@ -1,10 +1,21 @@
 * {
-    border: 1px solid pink;
+   border: 1px solid pink;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
 }
 
 .container {
     display: grid;
+    width: 40%;
+    height: 40%;
     grid-template-columns: repeat(16, auto);
+}
+
+.gridElement {
     aspect-ratio: 1;
 }
 
