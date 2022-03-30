@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const button = document.querySelector('.button');
 
 for (i = 0; i < 256; i++) {
     const div = document.createElement('div');
@@ -10,6 +11,11 @@ const gridElement = document.querySelectorAll('.gridElement');
 gridElement.forEach((element) => {
     element.addEventListener('mouseenter' , () => {
         element.classList.add('pixel');
-        console.log(element.classList);
+    });
+});
+
+button.addEventListener(('click'), () => {
+    gridElement.forEach((element) => {
+        element.classList.remove('pixel');
     });
 });
