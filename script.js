@@ -9,21 +9,11 @@ function createGrid(gridSize) {
         const div = document.createElement('div');
         container.appendChild(div);
         div.classList.add('gridElement');
+        div.classList.add('gridLine');
     };
     container.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
     makeGridDynamic();
 };
-
-buttons.forEach((button) => {
-    button.addEventListener('click' , (e) => {
-        if (e.target.id == 'clear') {
-            clearGrid();
-        } else {
-            removeCurrentGrid();
-            createGrid(e.target.id);
-        };
-    });
-});
 
 function removeCurrentGrid() {
     while (container.firstChild) {
@@ -31,18 +21,38 @@ function removeCurrentGrid() {
     };
 };
 
+buttons.forEach((button) => {
+    button.addEventListener('click' , (e) => {
+        if (e.target.id == 'clear') {
+            clearGrid();
+        } else if (e.target.id == 'toggle-grid') {
+            showGrid();
+        } else {
+            removeCurrentGrid();
+            createGrid(e.target.id);
+        };
+    });
+});
+
 function makeGridDynamic() {
     const gridElement = document.querySelectorAll('.gridElement');
     gridElement.forEach((element) => {
         element.addEventListener('mouseenter' , (e) => {
-            e.target.classList.add('pixel');
+            e.target.style.backgroundColor = 'rgb(0,0,0)';
         });
+    });
+};
+
+function showGrid() {
+    const gridElement = document.querySelectorAll('.gridElement');
+    gridElement.forEach((element) => {
+        element.classList.toggle('gridLine');
     });
 };
 
 function clearGrid() {
     const gridElement = document.querySelectorAll('.gridElement');
     gridElement.forEach((element) => {
-        element.classList.remove('pixel');
+        element.style.backgroundColor = 'rgb(255,255,255)';
     });
 };
