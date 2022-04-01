@@ -1,21 +1,48 @@
 const container = document.querySelector('.container');
-const button = document.querySelector('.button');
+const clear = document.querySelector('#clear');
+const buttons = document.querySelectorAll('.button');
 
-for (i = 0; i < 256; i++) {
-    const div = document.createElement('div');
-    container.appendChild(div);
-    div.classList.add('gridElement');
+createGrid(16);
+
+function createGrid(gridSize) {
+    for (i = 0; i < (gridSize * gridSize); i++) {
+        const div = document.createElement('div');
+        container.appendChild(div);
+        div.classList.add('gridElement');
+    };
+    container.style.gridTemplateColumns = `repeat(${gridSize}, auto)`;
+    makeGridDynamic();
 };
 
-const gridElement = document.querySelectorAll('.gridElement');
-gridElement.forEach((element) => {
-    element.addEventListener('mouseenter' , () => {
-        element.classList.add('pixel');
+buttons.forEach((button) => {
+    button.addEventListener('click' , (e) => {
+        if (e.target.id == 'clear') {
+            clearGrid();
+        } else {
+            removeCurrentGrid();
+            createGrid(e.target.id);
+        };
     });
 });
 
-button.addEventListener(('click'), () => {
+function removeCurrentGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
+};
+
+function makeGridDynamic() {
+    const gridElement = document.querySelectorAll('.gridElement');
+    gridElement.forEach((element) => {
+        element.addEventListener('mouseenter' , (e) => {
+            e.target.classList.add('pixel');
+        });
+    });
+};
+
+function clearGrid() {
+    const gridElement = document.querySelectorAll('.gridElement');
     gridElement.forEach((element) => {
         element.classList.remove('pixel');
     });
-});
+};
