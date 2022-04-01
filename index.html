@@ -10,9 +10,14 @@
 </head>
 <body>
     <div>
-        <input type="number" min="1" max="64" id="size">
-        <input type="submit" value="Set grid size" id="submit"><br>
-        <button class="button">Clear</button>
+        <div id="sizes-container">
+            <p>Change the grid size</p>
+            <button class="button" id="8">8x8</button>
+            <button class="button" id="16">16x16</button>
+            <button class="button" id="32">32x32</button>
+            <button class="button" id="64">64x64</button>
+        </div>
+        <button class="button" id="clear">Clear</button>
     </div>
     <div class="container"></div>
 </body>
