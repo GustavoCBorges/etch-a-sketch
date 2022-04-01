@@ -1,6 +1,7 @@
 const container = document.querySelector('.container');
 const clear = document.querySelector('#clear');
 const buttons = document.querySelectorAll('.button');
+const color = document.querySelector('#color-selector');
 
 createGrid(16);
 
@@ -38,7 +39,7 @@ function makeGridDynamic() {
     const gridElement = document.querySelectorAll('.gridElement');
     gridElement.forEach((element) => {
         element.addEventListener('mouseenter' , (e) => {
-            e.target.style.backgroundColor = 'rgb(0,0,0)';
+            e.target.style.backgroundColor = `${document.getElementById('color-selector').value}`;
         });
     });
 };
