@@ -1,12 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Fredoka+One&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
+    font-family: 'Abel', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    color: rgb(54, 54, 54);
 }
 
 body {
     display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 248, 248);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.5em;
+    margin: 0.5em 0em 0.5em 0em;
+}
+
+#window {
+    display: flex;
     justify-content: center;
     gap: 2%;
+}
+
+#color-selector {
+    -webkit-appearance: none;
+    border: none;
+    width: 3em;
+    height: 3em;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+    aspect-ratio: 1;
+  }
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+}
+
+#color {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+button {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    margin: 0.2em;
+}
+
+#sizes-container {
+    text-align: center;
 }
 
 .container {
@@ -15,7 +73,7 @@ body {
     height: 40%;
     grid-template-columns: repeat(16, auto);
     background-color: white;
-    border: 1px solid lightgray;
+    box-shadow: 0em 0em 1em 0.01em rgba(82, 82, 82, 0.151);
 }
 
 .gridElement {
