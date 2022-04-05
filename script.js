@@ -61,6 +61,7 @@ function showGrid() {
     gridElement.forEach((element) => {
         element.classList.toggle('gridLine');
     });
+    container.classList.toggle('gridLine');
 };
 
 function clearGrid() {
