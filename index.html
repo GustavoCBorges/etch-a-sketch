@@ -9,19 +9,25 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <input type="color" id="color-selector"><br>
-        <button class="button" id="rainbow">Rainbow mode</button>
-        <div id="sizes-container">
-            <p>Change the grid size</p>
-            <button class="button" id="8">8x8</button>
-            <button class="button" id="16">16x16</button>
-            <button class="button" id="32">32x32</button>
-            <button class="button" id="64">64x64</button>
+    <h1>Etch-a-Sketch</h1>
+    <div id="window">
+        <div id="options">
+            <div id="color">
+                <p>Choose a color:</p>
+                <input type="color" id="color-selector"><br>
+            </div>
+            <button class="button" id="rainbow">Rainbow mode</button>
+            <div id="sizes-container">
+                <p>Change the grid size</p>
+                <button class="button" id="8">8x8</button>
+                <button class="button" id="16">16x16</button>
+                <button class="button" id="32">32x32</button>
+                <button class="button" id="64">64x64</button>
+            </div>
+            <button class="button" id="toggle-grid">Show grid</button>
+            <button class="button" id="clear">Clear</button>
         </div>
-        <button class="button" id="toggle-grid">Show grid</button><br>
-        <button class="button" id="clear">Clear</button>
+        <div class="container gridLine"></div>
     </div>
-    <div class="container"></div>
 </body>
 </html>
